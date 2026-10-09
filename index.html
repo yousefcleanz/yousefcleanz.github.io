@@ -1,0 +1,1032 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YousefCleanz | Mobile Car Detailing in Charlotte, NC</title>
+<meta name="description" content="Professional mobile car detailing in Charlotte, NC. Interior, exterior, and full detail packages brought straight to your driveway. 5.0 stars on Google.">
+<link rel="icon" type="image/png" href="images/logo-icon.png">
+<link rel="apple-touch-icon" href="images/logo-icon.png">
+<!-- Link previews (texts, social media). Once the domain is live, make og:image a full URL, e.g. https://yourdomain.com/images/logo.webp -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="YousefCleanz | Mobile Car Detailing in Charlotte, NC">
+<meta property="og:description" content="Professional mobile detailing brought straight to your driveway. Interior, exterior, and full details across the Charlotte metro. 5.0 stars on Google.">
+<meta property="og:image" content="images/logo.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1d2025">
+
+<!-- Business info for Google (structured data). Add "url" and a full "image" URL once the domain is live. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoWash",
+  "name": "YousefCleanz",
+  "alternateName": "Yousef Cleanz Mobile Detailing",
+  "description": "Professional mobile car detailing in Charlotte, NC. Interior, exterior, and full detail packages brought straight to your driveway.",
+  "telephone": "+1-704-777-6205",
+  "email": "yousefcleanz@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Charlotte",
+    "addressRegion": "NC",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    "Charlotte, NC", "Huntersville, NC", "Cornelius, NC", "Davidson, NC", "Mooresville, NC",
+    "Concord, NC", "Kannapolis, NC", "Gastonia, NC", "Belmont, NC", "Matthews, NC",
+    "Mint Hill, NC", "Indian Trail, NC", "Pineville, NC", "Waxhaw, NC", "Rock Hill, SC"
+  ],
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    "opens": "07:00",
+    "closes": "17:00"
+  }],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Detailing Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Interior Detail" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Exterior Detail" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Full Detail" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Paint Correction" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ceramic Coating" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Exclusive Member Maintenance Plan" } }
+    ]
+  },
+  "sameAs": [
+    "https://www.google.com/maps/place/Yousef+Cleanz+Detailing/@35.3451836,-80.7282335,10z/data=!4m6!3m5!1s0x419cb074a71546bb:0xcb563abf0daa7275!8m2!3d35.3451836!4d-80.7282335",
+    "https://www.instagram.com/yousef.cleanz/",
+    "https://www.tiktok.com/@yousefcleanz",
+    "https://www.facebook.com/people/Yousef-Cleanz-Mobile-Detailing/61581980584329/"
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<style>
+  /* Charcoal grays + the logo's car blue. Soft fills instead of hard lines. */
+  :root {
+    --bg: #1d2025;        /* page */
+    --bg-2: #22262c;      /* alternating sections */
+    --card: #2a2e35;      /* cards */
+    --card-2: #31363e;    /* inputs, chips */
+    --text: #eceff3;
+    --muted: #a0a8b3;
+    --accent: #1e9bf0;
+    --accent-2: #5cc0ff;
+    --accent-soft: rgba(30,155,240,.14);
+    --star: #f5b301;
+    --good: #2ecc71;
+    --bad: #ff6b6b;
+    --radius: 18px;
+    --display: "Archivo", system-ui, sans-serif;
+    --body: "IBM Plex Sans", system-ui, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--body); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  .wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+  .eyebrow { display: inline-block; font: 500 12px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--accent-2); }
+  h1, h2, h3 { font-family: var(--display); margin: 0; line-height: 1.02; letter-spacing: -.02em; font-weight: 900; text-transform: uppercase; }
+  h2 { font-size: clamp(30px, 4vw, 42px); }
+  .section { padding: 100px 0; scroll-margin-top: 64px; }
+  .section.alt { background: var(--bg-2); }
+  .section-head { text-align: center; max-width: 600px; margin: 0 auto 48px; }
+  .section-head .eyebrow { margin-bottom: 14px; }
+  .section-head p { color: var(--muted); margin: 14px 0 0; font-size: 17px; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: var(--accent); color: #fff; font: 600 15px var(--body); border: 0; border-radius: 12px; padding: 14px 22px; cursor: pointer; text-decoration: none; white-space: nowrap; transition: background .15s; }
+  .btn:hover { background: #3aa9f5; }
+  .btn-soft { background: var(--card-2); color: var(--text); }
+  .btn-soft:hover { background: #3a4049; }
+  [hidden] { display: none !important; }
+
+  /* Nav */
+  /* Transparent over the hero; fills in once the page is scrolled */
+  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: transparent; transition: background .3s, backdrop-filter .3s; }
+  .nav.scrolled { background: rgba(29,32,37,.86); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+  .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 16px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .brand img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; background: #3a3f46; }
+  .brand b { font: 800 18px var(--display); letter-spacing: -.01em; }
+  .brand b span { color: var(--accent); }
+  .nav-links { display: flex; gap: 28px; font-size: 14px; font-weight: 500; }
+  .nav-links a { text-decoration: none; color: var(--muted); transition: color .15s; }
+  .nav-links a:hover { color: var(--text); }
+  .nav-cta { display: flex; gap: 10px; align-items: center; }
+  .nav-cta .phone { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; text-decoration: none; font-size: 14px; padding: 9px 16px; border: 1px solid rgba(255,255,255,.28); border-radius: 12px; transition: border-color .15s, background .15s; }
+  .nav-cta .phone::before { content: ""; width: 14px; height: 14px; background: currentColor;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z'/%3E%3C/svg%3E") center/contain no-repeat;
+            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z'/%3E%3C/svg%3E") center/contain no-repeat; }
+  .nav-cta .phone:hover { border-color: var(--accent); background: rgba(30,155,240,.10); }
+  .nav-cta .btn { padding: 11px 18px; font-size: 14px; }
+
+  /* Hamburger menu (shown when the nav links are hidden) */
+  .menu-btn { display: none; width: 44px; height: 44px; border: 0; border-radius: 12px; background: rgba(255,255,255,.08); cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 5px; }
+  .menu-btn span { display: block; width: 20px; height: 2px; border-radius: 2px; background: #fff; transition: transform .25s, opacity .2s; }
+  .menu-btn[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .menu-btn[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .menu-btn[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mobile-menu { display: flex; flex-direction: column; padding: 8px 16px 18px; background: rgba(29,32,37,.97); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 18px 30px rgba(0,0,0,.35); }
+  .mobile-menu[hidden] { display: none; }
+  .mobile-menu a { padding: 14px 8px; font: 800 18px var(--display); text-transform: uppercase; letter-spacing: -.01em; text-decoration: none; border-radius: 10px; }
+  .mobile-menu a + a { border-top: 1px solid rgba(255,255,255,.05); }
+  .mobile-menu a:hover, .mobile-menu a:active { background: rgba(255,255,255,.05); color: var(--accent-2); }
+  .nav.menu-open { background: rgba(29,32,37,.97); }
+
+  /* Hero */
+  /* Hero background matches the Reviews section below, so the faded video blends in with no seam */
+  .hero { position: relative; overflow: hidden; padding: 152px 0 80px; isolation: isolate; background: var(--bg-2); }  /* 72px nav + 80px */
+  /* Blurred background video + charcoal overlay so the motion shows but details don't.
+     The whole layer fades out toward the bottom instead of ending in a hard edge. */
+  .hero-bg { position: absolute; inset: 0; z-index: -1; pointer-events: none; overflow: hidden;
+    -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent 100%);
+            mask-image: linear-gradient(180deg, #000 55%, transparent 100%); }
+  .hero-bg video { position: absolute; inset: -4%; width: 108%; height: 108%; object-fit: cover; filter: blur(7px) saturate(.75); }
+  .hero-bg::after { content: ""; position: absolute; inset: 0;
+    background:
+      radial-gradient(900px 480px at 15% -10%, rgba(30,155,240,.14), transparent 70%),
+      linear-gradient(180deg, rgba(29,32,37,.72) 0%, rgba(29,32,37,.80) 100%); }
+  @media (prefers-reduced-motion: reduce) { .hero-bg video { display: none; } }
+  .hero .wrap.split { display: grid; grid-template-columns: 1.1fr .9fr; gap: 64px; align-items: center; }
+  .hero h1 { font-size: clamp(40px, 5.6vw, 64px); margin: 18px 0 20px; }
+  .hero h1 em { font-style: normal; color: var(--accent); }
+  .hero p.lead { font-size: 18px; color: var(--muted); max-width: 490px; margin: 0 0 32px; }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .rating { display: inline-flex; align-items: center; gap: 12px; margin-top: 36px; text-decoration: none; }
+  .rating img { width: 38px; height: 38px; border-radius: 50%; object-fit: cover; }
+  .rating .stars { color: var(--star); letter-spacing: 1px; font-size: 14px; line-height: 1; }
+  .rating small { display: block; color: var(--muted); font-size: 13px; margin-top: 3px; }
+
+  /* Quote form */
+  .quote { background: var(--card); border-radius: 22px; padding: 32px; box-shadow: 0 24px 60px rgba(0,0,0,.28); scroll-margin-top: 90px; }
+  .quote h3 { font-size: 24px; margin: 0 0 4px; }
+  .quote .sub { color: var(--muted); font-size: 14px; margin: 0 0 20px; }
+  .progress { display: flex; gap: 6px; margin-bottom: 8px; }
+  .progress i { flex: 1; height: 4px; border-radius: 99px; background: var(--card-2); transition: background .3s; }
+  .progress i.on { background: var(--accent); }
+  .step-label { font-size: 12px; font-weight: 600; color: var(--muted); margin-bottom: 18px; }
+  .field { margin-bottom: 16px; }
+  .field label, .field .label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 7px; color: #d4d9df; }
+  .req { color: var(--accent-2); }
+  .quote input, .quote select { width: 100%; background: var(--card-2); color: var(--text); border: 1px solid transparent; border-radius: 12px; padding: 13px 14px; font: 500 15px var(--body); outline: none; transition: border-color .15s, box-shadow .15s; }
+  .quote select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%23a0a8b3' stroke-width='2'%3E%3Cpath d='M1 1l5 5 5-5'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
+  .quote input[type="date"] { color-scheme: dark; cursor: pointer; min-height: 48px; }
+  .quote input[type="date"]::-webkit-calendar-picker-indicator { cursor: pointer; opacity: .7; }
+  .quote input:focus, .quote select:focus { border-color: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); }
+  .quote .invalid { border-color: var(--bad) !important; }
+  .row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .pills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .pills > div { position: relative; }
+  .pills input { position: absolute; inset: 0; margin: 0; width: 100%; height: 100%; opacity: 0; pointer-events: none; }
+  .pills label { margin: 0; text-align: center; display: flex; align-items: center; justify-content: center; height: 100%; line-height: 1.25; padding: 11px 6px; border: 1px solid transparent; border-radius: 12px; background: var(--card-2); cursor: pointer; font-weight: 600; font-size: 13px; color: #d4d9df; transition: all .15s; }
+  .pills label:hover { background: #3a4049; }
+  .pills input:checked + label { border-color: var(--accent); background: var(--accent-soft); color: #fff; }
+  .pills input:focus-visible + label { box-shadow: 0 0 0 4px var(--accent-soft); }
+  .pills.invalid label { border-color: var(--bad); }
+  .step { display: none; }
+  .step.active { display: block; animation: fade .25s ease; }
+  @keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+  .step-actions { display: flex; gap: 10px; margin-top: 8px; }
+  .step-actions .btn { flex: 1; }
+  .step-actions .btn-soft { flex: 0 0 auto; }
+  .fine { text-align: center; font-size: 12px; color: var(--muted); margin: 14px 0 0; }
+  .form-error { display: none; color: var(--bad); font-size: 13px; margin: 0 0 10px; }
+  .hp { position: absolute; left: -9999px; }
+  .success { display: none; text-align: center; padding: 28px 4px; }
+  .success .check { width: 60px; height: 60px; border-radius: 50%; background: rgba(46,204,113,.14); color: var(--good); display: grid; place-items: center; margin: 0 auto 16px; font-size: 28px; }
+  .success p { color: var(--muted); }
+
+  /* Stats */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 64px; }
+  .stat { background: var(--card); border-radius: var(--radius); padding: 22px 24px; display: flex; align-items: center; gap: 14px; }
+  .stat .ico { width: 42px; height: 42px; flex: none; border-radius: 12px; background: var(--accent-soft); color: var(--accent-2); display: grid; place-items: center; }
+  .stat b { display: block; font: 800 20px var(--display); letter-spacing: -.01em; line-height: 1.2; }
+  .stat span { font-size: 13px; color: var(--muted); }
+
+  /* Carousels (reviews + work) */
+  .carousel { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); }
+  /* GPU-composited so slow speeds glide smoothly instead of stepping pixel by pixel */
+  .track { display: flex; align-items: flex-start; gap: 16px; width: max-content; animation: slide var(--speed, 80s) linear infinite; will-change: transform; backface-visibility: hidden; }
+  @keyframes slide { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
+  @media (prefers-reduced-motion: reduce) { .track { animation: none; flex-wrap: wrap; width: auto; justify-content: center; padding: 0 16px; } }
+
+  .g-badge { display: inline-flex; align-items: center; gap: 10px; margin-top: 18px; padding: 8px 16px; background: var(--card); border-radius: 999px; font-size: 14px; font-weight: 500; text-decoration: none; color: #d4d9df; }
+  .g-badge:hover { background: var(--card-2); }
+  .g-badge .stars { color: var(--star); letter-spacing: 1px; }
+  /* Every review card is the same size; the name row sits at the bottom */
+  #reviewTrack { align-items: stretch; }
+  .review { width: 340px; flex: none; display: flex; flex-direction: column; background: var(--card); border-radius: var(--radius); padding: 24px; }
+  .review .who { margin-top: auto; }
+  .review .stars { color: var(--star); letter-spacing: 2px; font-size: 14px; }
+  .review p { margin: 12px 0 20px; color: #d4d9df; font-size: 15px; }
+  .who { display: flex; align-items: center; gap: 10px; font-size: 14px; }
+  .who .av { width: 36px; height: 36px; border-radius: 50%; background: var(--accent-soft); color: var(--accent-2); display: grid; place-items: center; font-weight: 700; font-size: 13px; flex: none; }
+  .who small { display: block; color: var(--muted); font-size: 12px; }
+
+  /* Our Work: slow carousel of tall cards, staggered like a feed */
+  /* Our Work: a tidy grid of small square photos */
+  .work-grid { --cols: 4; display: grid; grid-template-columns: repeat(var(--cols), 1fr); gap: 12px; max-width: calc(var(--cols) * 280px); margin: 0 auto; }
+  .shot { position: relative; margin: 0; aspect-ratio: 1; border-radius: 14px; overflow: hidden; background: var(--card); }
+  .shot figcaption { position: absolute; left: 10px; bottom: 10px; font: 600 11px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: #fff; background: rgba(20,22,26,.78); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); padding: 7px 10px; border-radius: 6px; display: flex; align-items: center; gap: 6px; }  .shot img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+  .shot:hover img { transform: scale(1.05); }
+  .shot.empty { display: grid; place-items: center; background: linear-gradient(160deg, #2e333a, #262a30); color: #6f7782; }
+  .shot.empty span { display: flex; flex-direction: column; align-items: center; gap: 8px; font-size: 12px; font-weight: 500; }
+
+  /* Services */
+  /* All packages in one row of skinny cards; swipes sideways when the screen is too narrow */
+  .wrap.wide { max-width: 1400px; }
+  .packages { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(172px, 1fr); gap: 12px; align-items: stretch;
+    overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; scrollbar-width: thin; scrollbar-color: #3a4049 transparent; }
+  .packages::-webkit-scrollbar { height: 6px; }
+  .packages::-webkit-scrollbar-thumb { background: #3a4049; border-radius: 99px; }
+  .service { scroll-snap-align: start; display: flex; flex-direction: column; background: var(--card); border-radius: var(--radius); padding: 22px 18px; }
+  .swipe-hint { display: none; text-align: center; font: 500 12px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-top: 14px; }
+  .service.featured { box-shadow: inset 0 0 0 1.5px var(--accent); background: linear-gradient(180deg, rgba(30,155,240,.10), var(--card) 45%); }
+  .service .tag { align-self: flex-start; font: 600 11px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: #d4d9df; background: var(--card-2); padding: 7px 10px; border-radius: 6px; margin-bottom: 18px; }
+  .service.featured .tag { background: var(--accent); color: #fff; }
+  .service h3 { font-size: 19px; margin-bottom: 10px; }
+  .service p { color: var(--muted); margin: 0 0 16px; font-size: 13px; line-height: 1.5; }
+  .checks { list-style: none; margin: 0 0 22px; padding: 16px 0 0; display: grid; gap: 9px; border-top: 1px solid rgba(255,255,255,.06); flex: 1; align-content: start; }
+  .checks li { display: flex; gap: 8px; align-items: flex-start; font-size: 13px; color: #d4d9df; line-height: 1.4; }
+  .checks li::before { content: ""; flex: none; width: 16px; height: 16px; margin-top: 1px; background: var(--accent-2);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='m8 12.5 2.8 2.8L16.5 9'/%3E%3C/svg%3E") center/contain no-repeat;
+            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='m8 12.5 2.8 2.8L16.5 9'/%3E%3C/svg%3E") center/contain no-repeat; }
+  .service .btn { width: 100%; padding: 11px 12px; font-size: 13px; }
+
+  /* Service areas */
+  .areas { display: grid; grid-template-columns: 300px 1fr; gap: 28px; background: var(--card); border-radius: 24px; padding: 28px; }
+  .areas-side { padding: 18px 6px 6px 10px; display: flex; flex-direction: column; }
+  .areas-side h2 { margin: 14px 0 12px; }
+  .areas-side p { color: var(--muted); margin: 0 0 24px; }
+  .area-list { list-style: none; margin: 0 0 28px; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 12px; }
+  .area-list li { display: flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 500; color: #d4d9df; }
+  .area-list li svg { flex: none; color: var(--accent); }
+  .areas-side .btn { margin-top: auto; align-self: flex-start; }
+  .map-box { position: relative; min-height: 500px; border-radius: 16px; overflow: hidden; background: #24282e; }
+  #areaMap { position: absolute; inset: 0; pointer-events: none; }
+  #areaMap .leaflet-control-attribution { pointer-events: auto; }
+  .leaflet-container { font-family: var(--body); background: #24282e; }
+  .leaflet-tile-pane { filter: grayscale(1) invert(.9) contrast(.85) brightness(.95); }  /* dark gray map */
+  .leaflet-control-attribution { background: rgba(29,32,37,.8) !important; color: #8a929c !important; }
+  .leaflet-control-attribution a { color: #a0a8b3 !important; }
+  .leaflet-tooltip.city-label { background: var(--bg); color: #fff; border: 0; border-radius: 6px; padding: 3px 8px; font-size: 11px; font-weight: 600; box-shadow: 0 2px 8px rgba(0,0,0,.35); }
+  .leaflet-tooltip.city-label::before { display: none; }
+
+  /* About */
+  .about { display: grid; grid-template-columns: .8fr 1.2fr; gap: 56px; background: var(--card); border-radius: 24px; padding: 60px; }
+  .about h2 { margin-top: 14px; }
+  .about-copy p { color: var(--muted); font-size: 17px; margin: 0 0 16px; }
+  .about-copy p:first-child { color: var(--text); font-size: 19px; font-weight: 500; }
+  .about-points { list-style: none; padding: 0; margin: 28px 0 32px; display: flex; flex-wrap: wrap; gap: 10px; }
+  .about-points li { display: inline-flex; gap: 8px; align-items: center; font-size: 14px; font-weight: 600; background: var(--card-2); padding: 9px 14px; border-radius: 99px; }
+  .about-points li::before { content: "✓"; color: var(--accent-2); font-weight: 800; }
+
+  /* CTA + footer */
+  /* Slim call-to-action bar */
+  .cta { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; background: linear-gradient(135deg, #1e9bf0, #1279c4); border-radius: 16px; padding: 18px 24px; }
+  .cta h2 { font-size: 20px; }
+  .cta p { color: rgba(255,255,255,.85); margin: 2px 0 0; font-size: 14px; }
+  .cta .btn { background: #fff; color: #0d6fb5; padding: 11px 18px; font-size: 14px; }
+  .cta .btn:hover { background: #eef6fd; }
+  .cta-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+  .cta .btn-call { background: rgba(255,255,255,.16); color: #fff; }
+  .cta .btn-call:hover { background: rgba(255,255,255,.26); }
+  footer { padding: 64px 0 28px; color: var(--muted); font-size: 14px; background: var(--bg-2); }
+  .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1.2fr; gap: 48px; }
+  .foot-brand p { margin: 16px 0 22px; max-width: 300px; }
+  .foot-brand .btn { padding: 11px 18px; font-size: 14px; }
+  footer h4 { margin: 0 0 18px; font: 700 12px var(--body); letter-spacing: .14em; text-transform: uppercase; color: var(--text); }
+  .foot-links { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .foot-links a { text-decoration: none; transition: color .15s; }
+  .foot-links a:hover { color: var(--accent-2); }
+  .foot-contact { display: grid; gap: 16px; margin: 0; }
+  .foot-contact dt { font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #7c8591; margin-bottom: 3px; }
+  .foot-contact dd { margin: 0; color: #d4d9df; }
+  .foot-contact a { text-decoration: none; }
+  .foot-contact a:hover { color: var(--accent-2); }
+  .foot-legal { color: inherit; text-decoration: none; }
+  .foot-legal:hover { color: var(--accent-2); text-decoration: underline; }
+  .socials { display: flex; gap: 8px; }
+  .socials a { width: 34px; height: 34px; border-radius: 50%; background: var(--card); color: var(--muted); display: grid; place-items: center; transition: background .15s, color .15s; }
+  .socials a:hover { background: var(--accent); color: #fff; }
+  .foot-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: 48px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.05); font-size: 13px; color: #7c8591; }
+  .mobile-bar { display: none; }
+
+  @media (max-width: 1000px) {
+    .hero .wrap.split, .about { grid-template-columns: 1fr; gap: 40px; }
+    .about { padding: 40px; }
+    .areas { grid-template-columns: 1fr; }
+    .map-box { min-height: 380px; }
+    .nav-links { display: none; }
+    .menu-btn { display: flex; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    .packages { grid-auto-columns: 230px; }
+    .swipe-hint { display: block; }
+    .foot-grid { grid-template-columns: 1fr 1fr; }
+    .foot-brand { grid-column: 1 / -1; }
+  }
+  @media (max-width: 600px) {
+    footer { padding: 48px 0 96px; }
+    .foot-grid { grid-template-columns: 1fr; gap: 36px; }
+  }
+  @media (max-width: 600px) {
+    .wrap { padding: 0 16px; }
+    .section { padding: 68px 0; }
+    .hero { padding: 116px 0 48px; }
+    .hero p.lead { display: none; }   /* save space on phones */
+    .nav-quote, .hero-actions { display: none; }   /* the bottom bar already has the quote button on phones */
+    .hero .rating { margin-top: 0; }
+    .hero h1 { margin-bottom: 26px; }
+    .nav-cta .phone { display: none; }
+    .brand b { font-size: 16px; }
+    .row-2 { grid-template-columns: 1fr; }
+    .pills { grid-template-columns: 1fr 1fr; }
+    .packages { grid-auto-columns: 78%; }
+    .quote { padding: 24px 18px; }
+    .stats { gap: 10px; margin-top: 40px; }
+    .stat { padding: 16px; gap: 10px; flex-direction: column; align-items: flex-start; }
+    .stat b { font-size: 18px; }
+    .review { width: 280px; }
+    .work-grid { gap: 8px; }
+    .work-grid.many { grid-template-columns: 1fr 1fr; }
+    .shot { border-radius: 10px; }
+    .shot figcaption { left: 6px; bottom: 6px; font-size: 9px; padding: 5px 7px; }
+    .areas { padding: 14px; }
+    .areas-side { padding: 14px 6px 4px; }
+    .about { padding: 28px 20px; }
+    .map-box { min-height: 320px; }
+    .mobile-bar { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 1000; gap: 8px; padding: 10px 16px; background: rgba(29,32,37,.95); backdrop-filter: blur(10px); }
+    .mobile-bar .btn { flex: 1; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     Business details are filled in from SITE near the bottom
+     of this file. Search for "SITE = {".
+     ============================================================ -->
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="#top" class="brand">
+      <img data-site="logo-icon" alt="YousefCleanz logo" width="40" height="40">
+      <b>Yousef<span>Cleanz</span></b>
+    </a>
+    <div class="nav-links">
+      <a href="#reviews">Reviews</a>
+      <a href="#services">Services</a>
+      <a href="#work">Our Work</a>
+      <a href="#service-areas">Areas</a>
+      <a href="#about">About</a>
+    </div>
+    <div class="nav-cta">
+      <a class="phone" data-site="phone-link" href="#" hidden></a>
+      <a class="btn nav-quote" href="#quote">Get a Free Quote</a>
+      <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <!-- Hamburger dropdown (phones and tablets) -->
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <a href="#reviews">Reviews</a>
+    <a href="#services">Services</a>
+    <a href="#work">Our Work</a>
+    <a href="#service-areas">Service Areas</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true">
+    <video src="images/hero.mp4" autoplay muted loop playsinline preload="auto"></video>
+  </div>
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow">Mobile Detailing · Charlotte, NC</span>
+      <h1>Showroom shine, <em>right in your driveway.</em></h1>
+      <p class="lead">Professional mobile detailing that comes to you. No drop-off, no waiting around, just results that make your car look brand new again.</p>
+      <div class="hero-actions">
+        <a class="btn hero-quote" href="#quote">Get My Free Quote →</a>
+        <a class="btn btn-soft" href="#services">See Services</a>
+      </div>
+      <a class="rating" data-site="google-link" href="#" target="_blank" rel="noopener">
+        <img data-site="logo-icon" alt="">
+        <div><div class="stars">★★★★★</div><small>Rated 5.0 on Google</small></div>
+      </a>
+    </div>
+
+    <!-- ==================== QUOTE FORM (Formspree) ==================== -->
+    <div class="quote" id="quote">
+      <h3>Get a free quote</h3>
+      <p class="sub">Takes less than a minute. No obligation.</p>
+
+      <form id="quoteForm" action="https://formspree.io/f/mdeaaznp" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="New detailing quote request – YousefCleanz">
+        <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <div class="progress" aria-hidden="true"><i class="on"></i><i id="bar2"></i></div>
+        <div class="step-label" id="stepLabel" aria-live="polite">Step 1 of 2 · Your vehicle</div>
+
+        <!-- STEP 1: vehicle + service -->
+        <div class="step active" data-step="1">
+          <div class="field">
+            <label for="vehicle_size">Vehicle size <span class="req">*</span></label>
+            <select id="vehicle_size" name="vehicle_size" required>
+              <option value="">Choose your vehicle…</option>
+              <option value="Small: Compact / Coupe">Small: Compact / Coupe</option>
+              <option value="Medium: Sedan / Small SUV">Medium: Sedan / Small SUV</option>
+              <option value="Large: Truck / Minivan / 3-Row SUV">Large: Truck / Minivan / 3-Row SUV</option>
+              <option value="Not sure">Not sure</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <span class="label">Service needed <span class="req">*</span></span>
+            <div class="pills" id="servicePills" role="radiogroup" aria-label="Service needed">
+              <div><input type="radio" id="svc-int" name="service_type" value="Interior"><label for="svc-int">Interior</label></div>
+              <div><input type="radio" id="svc-ext" name="service_type" value="Exterior"><label for="svc-ext">Exterior</label></div>
+              <div><input type="radio" id="svc-both" name="service_type" value="Interior + Exterior"><label for="svc-both">Both</label></div>
+              <div><input type="radio" id="svc-correction" name="service_type" value="Paint Correction"><label for="svc-correction">Paint Correction</label></div>
+              <div><input type="radio" id="svc-ceramic" name="service_type" value="Ceramic Coating"><label for="svc-ceramic">Ceramic Coating</label></div>
+              <div><input type="radio" id="svc-member" name="service_type" value="Exclusive Member (maintenance)"><label for="svc-member">Membership</label></div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="requested_date">Requested date <span class="req">*</span></label>
+            <input id="requested_date" name="requested_date" type="date" required>
+          </div>
+
+          <p class="form-error" id="err1">Please fill in everything above to continue.</p>
+          <div class="step-actions">
+            <button type="button" class="btn" id="toStep2">Continue →</button>
+          </div>
+        </div>
+
+        <!-- STEP 2: contact info -->
+        <div class="step" data-step="2">
+          <div class="field">
+            <label for="name">Full name <span class="req">*</span></label>
+            <input id="name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="email">Email <span class="req">*</span></label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="row-2">
+            <div class="field">
+              <label for="city">City <span class="req">*</span></label>
+              <input id="city" name="city" type="text" autocomplete="address-level2" required>
+            </div>
+            <div class="field">
+              <label for="phone">Phone <span class="req">*</span></label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
+            </div>
+          </div>
+
+          <p class="form-error" id="err2">Please fill in all fields with a valid email.</p>
+          <div class="step-actions">
+            <button type="button" class="btn btn-soft" id="backTo1">← Back</button>
+            <button type="submit" class="btn" id="submitBtn">Send My Request →</button>
+          </div>
+        </div>
+
+        <p class="fine">Free &amp; no obligation · Same day response</p>
+      </form>
+
+      <div class="success" id="success">
+        <div class="check">✓</div>
+        <h3>Request sent!</h3>
+        <p>Thanks! We got your info and will get back to you the same day with your quote.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.6L6 22l1.5-7.2L2 10l7.1-1.1z"/></svg></div>
+        <div><b>5.0 Stars</b><span>Google rating</span></div>
+      </div>
+      <div class="stat">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-8 9 8"/><path d="M5 10v10h14V10"/></svg></div>
+        <div><b>We Come to You</b><span>100% mobile</span></div>
+      </div>
+      <div class="stat">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div><b>15 Cities</b><span>Across the Charlotte metro</span></div>
+      </div>
+      <div class="stat">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <div><b>Same Day</b><span>Response</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="section alt" id="reviews">
+  <div class="wrap section-head">
+    <span class="eyebrow">Reviews</span>
+    <h2>What clients say</h2>
+    <a class="g-badge" data-site="google-link" href="#" target="_blank" rel="noopener">
+      <span class="stars">★★★★★</span> 5.0 on Google · Read all reviews →
+    </a>
+  </div>
+  <div class="carousel"><div class="track" id="reviewTrack"><!-- filled from SITE.reviews --></div></div>
+</section>
+
+<section class="section" id="services">
+  <div class="wrap wide">
+    <div class="section-head">
+      <span class="eyebrow">Services</span>
+      <h2>What we do</h2>
+      <p>Every detail done by hand, right in your driveway.</p>
+    </div>
+    <!-- Package cards: tag, title, short description, checklist, button -->
+    <div class="packages">
+      <div class="service">
+        <span class="tag">Inside</span>
+        <h3>Interior Detail</h3>
+        <p>A thorough deep clean of your vehicle's interior. Perfect for cars needing a complete refresh inside.</p>
+        <ul class="checks">
+          <li>Deep interior clean</li>
+          <li>Interior glass cleaned</li>
+          <li>Full disinfect &amp; protect</li>
+          <li>Leather conditioning</li>
+          <li>Door jambs cleaned</li>
+        </ul>
+        <a class="btn btn-soft" href="#quote" data-pick="svc-int">Get a Quote</a>
+      </div>
+      <div class="service featured">
+        <span class="tag">Inside + Out</span>
+        <h3>Full Detail</h3>
+        <p>The complete package that refreshes your ride, inside and out. Showroom quality from top to bottom.</p>
+        <ul class="checks">
+          <li>Everything in the Interior Detail</li>
+          <li>Everything in the Exterior Detail</li>
+          <li>Showroom finish inside &amp; out</li>
+        </ul>
+        <a class="btn" href="#quote" data-pick="svc-both">Get a Quote →</a>
+      </div>
+      <div class="service">
+        <span class="tag">Outside</span>
+        <h3>Exterior Detail</h3>
+        <p>Deep exterior cleaning and paint care for a glossy, protected finish.</p>
+        <ul class="checks">
+          <li>Foam pre-wash</li>
+          <li>Scratch-safe contact wash &amp; shampoo</li>
+          <li>Wheels &amp; rims with brake dust removal</li>
+          <li>Spray wax</li>
+          <li>Tire shine</li>
+        </ul>
+        <a class="btn btn-soft" href="#quote" data-pick="svc-ext">Get a Quote</a>
+      </div>
+      <div class="service">
+        <span class="tag">Refinement</span>
+        <h3>Paint Correction</h3>
+        <p>One-step or two-step machine correction to remove swirls and restore gloss.</p>
+        <ul class="checks">
+          <li>Full exterior detail</li>
+          <li>Clay bar &amp; paint decontamination</li>
+          <li>One-step or two-step machine correction</li>
+          <li>Two-step adds heavy defect removal &amp; a refining polish</li>
+          <li>High-gloss paint finish</li>
+          <li>Paint sealant protection</li>
+          <li>Garage access needed for two-step</li>
+        </ul>
+        <a class="btn btn-soft" href="#quote" data-pick="svc-correction">Get a Quote</a>
+      </div>
+      <div class="service">
+        <span class="tag">Protection</span>
+        <h3>Ceramic Coating</h3>
+        <p>Professional 3-year ceramic coating for deep gloss and water beading. Paint correction quoted separately.</p>
+        <ul class="checks">
+          <li>Full exterior detail</li>
+          <li>Clay bar &amp; paint decontamination</li>
+          <li>3-year ceramic coating application</li>
+          <li>Deep gloss &amp; paint enhancement</li>
+          <li>Water beading &amp; self-cleaning properties</li>
+          <li>Protects against UV, oxidation &amp; contaminants</li>
+          <li>Garage access needed; correction not included</li>
+        </ul>
+        <a class="btn btn-soft" href="#quote" data-pick="svc-ceramic">Get a Quote</a>
+      </div>
+      <div class="service member">
+        <span class="tag">Maintenance</span>
+        <h3>Exclusive Member</h3>
+        <p>Keep that fresh-detail feeling all year with recurring maintenance details on a set schedule.</p>
+        <ul class="checks">
+          <li>Recurring maintenance details</li>
+          <li>Interior &amp; exterior upkeep</li>
+          <li>Priority scheduling</li>
+          <li>Keeps your car looking freshly detailed</li>
+        </ul>
+        <a class="btn btn-soft" href="#quote" data-pick="svc-member">Become a Member</a>
+      </div>
+    </div>
+    <p class="swipe-hint">Swipe for all 6 packages →</p>
+  </div>
+</section>
+
+<section class="section alt" id="work">
+  <div class="wrap section-head">
+    <span class="eyebrow">Portfolio</span>
+    <h2>Our Work</h2>
+    <p>A few recent jobs. The results speak for themselves.</p>
+  </div>
+  <div class="wrap"><div class="work-grid" id="workGrid"><!-- filled from SITE.work --></div></div>
+</section>
+
+<section class="section" id="service-areas">
+  <div class="wrap">
+    <div class="areas">
+      <div class="areas-side">
+        <span class="eyebrow">Where We Work</span>
+        <h2>Service areas</h2>
+        <p>Proudly serving Charlotte and the surrounding communities across the greater metro area.</p>
+        <ul class="area-list" id="areaList"></ul>
+        <a class="btn" href="#quote">Get a Free Quote →</a>
+      </div>
+      <div class="map-box">
+        <div id="areaMap" role="img" aria-label="Map of the YousefCleanz service area around Charlotte, NC"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about" style="padding-top:0">
+  <div class="wrap">
+    <div class="about">
+      <div>
+        <span class="eyebrow">About</span>
+        <h2>Meet YousefCleanz</h2>
+      </div>
+      <div class="about-copy">
+        <p>YousefCleanz is a professional mobile detailing service proudly serving the Charlotte area.</p>
+        <p>I bring the detail straight to your driveway, so there's no drop-off and no waiting around, just results that make your car look brand new again. I've always had a passion for seeing cars shine like the day they rolled off the lot, and that passion shows in every job.</p>
+        <p>From deep interior cleaning, stain removal, and odor elimination to premium exterior washes and paint care, every car gets the same attention I'd give my own. The mission is simple: high-quality results, fair pricing, and service you can trust.</p>
+        <ul class="about-points">
+          <li>Fully mobile, we come to you</li>
+          <li>5.0-star rating on Google</li>
+          <li>Free, no-obligation quotes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding: 0 0 48px">
+  <div class="wrap">
+    <div class="cta">
+      <div>
+        <h2>Let's make it shine</h2>
+        <p>Tell us about your car and get a free quote in under a minute.</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn-call" data-site="phone-link" data-label="Call " href="#" hidden></a>
+        <a class="btn" href="#quote">Get My Free Quote →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="brand"><img data-site="logo-icon" alt=""><b>Yousef<span>Cleanz</span></b></a>
+        <p>Professional mobile detailing, brought straight to your driveway in Charlotte and the surrounding areas.</p>
+        <a class="btn" href="#quote">Get a Free Quote</a>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="foot-links">
+          <li><a href="#top">Home</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#work">Our Work</a></li>
+          <li><a href="#service-areas">Service Areas</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <dl class="foot-contact">
+          <div data-site="phone-row" hidden><dt>Phone</dt><dd><a data-site="phone-link" href="#"></a></dd></div>
+          <div><dt>Email</dt><dd><a data-site="email-link" href="#"></a></dd></div>
+          <div><dt>Hours</dt><dd data-site="hours"></dd></div>
+          <div><dt>Location</dt><dd data-site="location"></dd></div>
+        </dl>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> YousefCleanz. All rights reserved. · <a href="privacy.html" class="foot-legal">Privacy Policy</a></span>
+      <div class="socials">
+        <a href="https://www.instagram.com/yousef.cleanz/" target="_blank" rel="noopener" aria-label="YousefCleanz on Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@yousefcleanz" target="_blank" rel="noopener" aria-label="YousefCleanz on TikTok">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/people/Yousef-Cleanz-Mobile-Detailing/61581980584329/" target="_blank" rel="noopener" aria-label="YousefCleanz on Facebook">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-bar">
+  <a class="btn btn-soft" data-site="phone-link" href="#" hidden>Call</a>
+  <a class="btn" href="#quote">Get a Free Quote</a>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script>
+/* ============================================================
+   SITE: business details
+   ============================================================ */
+const SITE = {
+  name: "YousefCleanz",
+  phone: "(704) 777-6205",   // leave empty ("") to hide all phone links
+  email: "yousefcleanz@gmail.com",
+  hours: "Mon–Sun: 7 AM to 5 PM",
+  location: "Charlotte, NC & surrounding areas",
+  google: "https://www.google.com/maps/place/Yousef+Cleanz+Detailing/@35.3451836,-80.7282335,10z/data=!4m6!3m5!1s0x419cb074a71546bb:0xcb563abf0daa7275!8m2!3d35.3451836!4d-80.7282335",
+  // Logo files live in the images/ folder (logo.webp = full logo, logo-icon.png = square car crop)
+  logoIcon: "images/logo-icon.png",
+  // Our Work photo grid: square photos of real YousefCleanz jobs with a short label.
+  // Add more like { src: "images/your-photo.jpg", label: "Interior" }.
+  // Order is mixed so the three before/after shots (Rims, Interior, Exterior) never touch,
+  // whether the grid shows 4 across (desktop) or 2 across (phones).
+  work: [
+    { src: "images/work-rims.jpg", label: "Rims" },
+    { src: "images/work-denali.jpg", label: "Truck" },
+    { src: "images/work-cockpit.jpg", label: "Leather" },
+    { src: "images/work-interior.jpg", label: "Interior" },
+    { src: "images/work-foam.jpg", label: "Foam Wash" },
+    { src: "images/work-seats.jpg", label: "Seats" },
+    { src: "images/work-exterior.jpg", label: "Exterior" },
+    { src: "images/work-trunk.jpg", label: "Cargo" }
+  ],
+  workPlaceholders: 8,
+  // Service areas. [name, lat, lng, label side]
+  areas: [
+    ["Charlotte", 35.2271, -80.8431],
+    ["Huntersville", 35.4107, -80.8429],
+    ["Cornelius", 35.4868, -80.8601, "left"],   // label on the left so it doesn't overlap Davidson
+    ["Davidson", 35.4993, -80.8487],
+    ["Mooresville", 35.5849, -80.8101],
+    ["Concord", 35.4088, -80.5795],
+    ["Kannapolis", 35.4874, -80.6217],
+    ["Gastonia", 35.2621, -81.1873],
+    ["Belmont", 35.2429, -81.0373],
+    ["Matthews", 35.1168, -80.7237],
+    ["Mint Hill", 35.1796, -80.6473],
+    ["Indian Trail", 35.0768, -80.6692],
+    ["Pineville", 35.0832, -80.8923],
+    ["Waxhaw", 34.9246, -80.7434],
+    ["Rock Hill", 34.9249, -81.0251]
+  ],
+  // Coverage outline drawn on the map
+  coverage: [
+    [35.625, -80.835], [35.535, -80.585], [35.405, -80.535], [35.165, -80.600],
+    [35.050, -80.625], [34.880, -80.715], [34.880, -81.065], [35.120, -81.150],
+    [35.275, -81.225], [35.480, -80.905]
+  ],
+  // Real Google reviews (Yousef Cleanz Detailing on Google Maps)
+  reviews: [
+    { name: "Michael James", text: "Yousef Cleanz Detailing did an outstanding job detailing my car. He was professional, reliable, and clearly takes pride in delivering quality work. The car looked excellent when he was finished, and the entire experience was smooth from start to finish." },
+    { name: "Eduardo R-P", text: "Yousef was awesome! Puts attention to the little things and really comes through with good detailing for a good price! If you looking for a quick and efficient detail, Yousef is great." },
+    { name: "Aiza Khawaja", text: "Yousef did an excellent job on all 3 of our cars! He is so detailed and very professional! I’ve referred him to several friends also! Would definitely recommend!" },
+    { name: "Anne O'Shell", text: "Yousef was thorough, efficient, and did high-quality work on my cars. Very impressed and would recommend him without hesitation." },
+    { name: "roro rahman", text: "Yousef did an absolutely amazing job on my car. … He paid attention to every single detail and made my car look and feel brand new again. … I 100% recommend him and will definitely be coming back again." },
+    { name: "Yazan Tagleby", text: "Had a great experience with Yousef! He loves what he does and I think that matters the most for someone detailing your car." },
+    { name: "CardinsHideout", text: "I've called this guy to detail my cars about 4-5 times now. Does honest work, he's really reliable … and definitely understands how proper detailing needs to be done. 10/10, would recommend to ANYONE in need." },
+    { name: "Faisal Jaber", text: "I always clean my car myself and I’m never satisfied with how it looks so I decided to try out a detailer. … They were quick and respectful, they made my bmw look cleaner than I could’ve myself." },
+    { name: "Milton Landaverde", text: "Great service from yousef no doubt knows his work, will be rebooking him again" },
+    { name: "Lat", text: "After someone canceled my detailing appointment at the last minute, Joseph quickly responded to my message on Facebook and came out the same day to get the job done with great attention to detail. Fair pricing and awesome work—I highly recommend!" }
+  ]
+};
+
+const PIN = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>';
+const CAMERA = '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8a2 2 0 0 1 2-2h2l2-2h6l2 2h2a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.5"/></svg>';
+
+/* ---------- fill page from SITE ---------- */
+(function fill() {
+  document.querySelectorAll('[data-site="logo-icon"]').forEach(el => el.src = SITE.logoIcon);
+  document.querySelectorAll('[data-site="google-link"]').forEach(el => el.href = SITE.google);
+  if (SITE.phone) {
+    const tel = "tel:" + SITE.phone.replace(/\D/g, "");
+    document.querySelectorAll('[data-site="phone-link"]').forEach(el => {
+      el.href = tel; el.hidden = false;
+      if (!el.textContent.trim()) el.textContent = (el.dataset.label || "") + SITE.phone;
+    });
+    document.querySelectorAll('[data-site="phone-row"]').forEach(el => el.hidden = false);
+  }
+  document.querySelectorAll('[data-site="email-link"]').forEach(el => { el.href = "mailto:" + SITE.email; el.textContent = SITE.email; });
+  document.querySelectorAll('[data-site="hours"]').forEach(el => el.textContent = SITE.hours);
+  document.querySelectorAll('[data-site="location"]').forEach(el => el.textContent = SITE.location);
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Reviews carousel (doubled so the loop is seamless)
+  const reviewTrack = document.getElementById("reviewTrack");
+  const reviewCard = r => {
+    const d = document.createElement("div"); d.className = "review";
+    const initials = r.name.split(/\s+/).map(w => w[0]).join("").slice(0, 2).toUpperCase();
+    d.innerHTML = `<div class="stars">★★★★★</div><p></p><div class="who"><div class="av"></div><div><strong></strong><small>Google Review</small></div></div>`;
+    d.querySelector("p").textContent = `“${r.text}”`;
+    d.querySelector(".av").textContent = initials;
+    d.querySelector("strong").textContent = r.name;
+    return d;
+  };
+  [...SITE.reviews, ...SITE.reviews].forEach(r => reviewTrack.appendChild(reviewCard(r)));
+
+  // Our Work grid
+  const workGrid = document.getElementById("workGrid");
+  const items = SITE.work.length ? SITE.work : Array(SITE.workPlaceholders).fill(null);
+  // Grid uses as many columns as there are photos, up to 4
+  workGrid.style.setProperty("--cols", Math.min(items.length, 4));
+  workGrid.classList.toggle("many", items.length > 3);
+  const shot = item => {
+    const d = document.createElement("figure");
+    if (item) {
+      d.className = "shot";
+      const img = document.createElement("img");
+      img.src = item.src; img.loading = "lazy";
+      img.alt = `${item.label} detail by YousefCleanz`;
+      const cap = document.createElement("figcaption"); cap.textContent = item.label;
+      d.append(img, cap);
+    } else {
+      d.className = "shot empty";
+      d.innerHTML = `<span>${CAMERA}Photo coming soon</span>`;
+    }
+    return d;
+  };
+  items.forEach(item => workGrid.appendChild(shot(item)));
+
+  // Steady speed in pixels per second, no matter how many cards there are
+  const setSpeed = (track, pxPerSec) => {
+    const update = () => track.style.setProperty("--speed", (track.scrollWidth / 2 / pxPerSec) + "s");
+    update();
+    window.addEventListener("load", update);
+    window.addEventListener("resize", update);
+  };
+  setSpeed(reviewTrack, 40);
+
+  // Area list
+  const list = document.getElementById("areaList");
+  SITE.areas.forEach(([name]) => {
+    const li = document.createElement("li");
+    li.innerHTML = PIN + "<span></span>";
+    li.querySelector("span").textContent = name;
+    list.appendChild(li);
+  });
+})();
+
+/* ---------- header: transparent at the top, solid once scrolled ---------- */
+(function navScroll() {
+  const nav = document.querySelector(".nav");
+  const update = () => nav.classList.toggle("scrolled", window.scrollY > 10);
+  update();
+  window.addEventListener("scroll", update, { passive: true });
+})();
+
+/* ---------- hamburger menu ---------- */
+(function mobileMenu() {
+  const nav = document.querySelector(".nav");
+  const btn = nav.querySelector(".menu-btn");
+  const menu = document.getElementById("mobileMenu");
+  const setOpen = open => {
+    menu.hidden = !open;
+    btn.setAttribute("aria-expanded", open);
+    btn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    nav.classList.toggle("menu-open", open);
+  };
+  btn.addEventListener("click", () => setOpen(menu.hidden));
+  menu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setOpen(false)));
+  document.addEventListener("keydown", e => { if (e.key === "Escape") setOpen(false); });
+  document.addEventListener("click", e => { if (!menu.hidden && !nav.contains(e.target)) setOpen(false); });
+})();
+
+/* ---------- service area map ---------- */
+(function areaMap() {
+  if (!window.L) return;
+  // Locked in place: no dragging or zooming, so scrolling the page over it just scrolls the page
+  const map = L.map("areaMap", {
+    dragging: false, touchZoom: false, scrollWheelZoom: false, doubleClickZoom: false,
+    boxZoom: false, keyboard: false, tap: false, zoomControl: false, attributionControl: true
+  });
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 18, attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+  map.attributionControl.setPrefix(false);
+
+  const area = L.polygon(SITE.coverage, {
+    color: "#1e9bf0", weight: 2, fillColor: "#1e9bf0", fillOpacity: 0.16
+  }).addTo(map);
+
+  SITE.areas.forEach(([name, lat, lng, dir = "right"]) => {
+    L.circleMarker([lat, lng], { radius: 5, color: "#fff", weight: 2, fillColor: "#1e9bf0", fillOpacity: 1 })
+      .bindTooltip(name, { permanent: true, direction: dir, offset: [dir === "left" ? -6 : 6, 0], className: "city-label" })
+      .addTo(map);
+  });
+
+  const fit = () => map.fitBounds(area.getBounds(), { padding: [24, 24] });
+  fit();
+  window.addEventListener("resize", fit);
+})();
+
+/* ---------- two-step form ---------- */
+(function quoteForm() {
+  const form = document.getElementById("quoteForm");
+  const steps = form.querySelectorAll(".step");
+  const label = document.getElementById("stepLabel");
+  const bar2 = document.getElementById("bar2");
+  const btn = document.getElementById("submitBtn");
+
+  // Calendar can't pick a day in the past
+  const dateInput = document.getElementById("requested_date");
+  const now = new Date();
+  dateInput.min = new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+  dateInput.addEventListener("change", () => dateInput.classList.remove("invalid"));
+  dateInput.addEventListener("click", () => { try { dateInput.showPicker(); } catch {} });
+
+  function go(n) {
+    steps.forEach(s => s.classList.toggle("active", s.dataset.step == n));
+    label.textContent = n === 1 ? "Step 1 of 2 · Your vehicle" : "Step 2 of 2 · Contact info";
+    bar2.classList.toggle("on", n === 2);
+    const first = form.querySelector(`.step[data-step="${n}"] input:not([type=radio]), .step[data-step="${n}"] select`);
+    if (first) first.focus({ preventScroll: true });
+  }
+
+  function check(fields) {
+    let ok = true;
+    fields.forEach(el => {
+      const bad = !el.value.trim() || (el.type === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value));
+      el.classList.toggle("invalid", bad);
+      if (bad) ok = false;
+    });
+    return ok;
+  }
+
+  form.querySelectorAll("input, select").forEach(el =>
+    el.addEventListener("input", () => el.classList.remove("invalid")));
+  form.querySelectorAll('input[name="service_type"]').forEach(r =>
+    r.addEventListener("change", () => document.getElementById("servicePills").classList.remove("invalid")));
+
+  document.getElementById("toStep2").addEventListener("click", () => {
+    const ok1 = check(["vehicle_size", "requested_date"].map(id => document.getElementById(id)));
+    const svc = form.querySelector('input[name="service_type"]:checked');
+    document.getElementById("servicePills").classList.toggle("invalid", !svc);
+    const ok = ok1 && !!svc;
+    document.getElementById("err1").style.display = ok ? "none" : "block";
+    if (ok) go(2);
+  });
+  document.getElementById("backTo1").addEventListener("click", () => go(1));
+
+  // Package buttons pre-select that service in the form
+  document.querySelectorAll("[data-pick]").forEach(a => a.addEventListener("click", () => {
+    const radio = document.getElementById(a.dataset.pick);
+    if (radio) { radio.checked = true; document.getElementById("servicePills").classList.remove("invalid"); go(1); }
+  }));
+
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+    const ok = check(["name", "email", "city", "phone"].map(id => document.getElementById(id)));
+    const err = document.getElementById("err2");
+    err.textContent = "Please fill in all fields with a valid email.";
+    err.style.display = ok ? "none" : "block";
+    if (!ok) return;
+
+    btn.disabled = true; btn.textContent = "Sending…";
+    try {
+      const res = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" }
+      });
+      if (!res.ok) throw new Error("bad response");
+      form.style.display = "none";
+      document.getElementById("success").style.display = "block";
+    } catch {
+      err.textContent = SITE.phone
+        ? `Something went wrong. Please try again, or call or text us at ${SITE.phone}.`
+        : "Something went wrong. Please try again in a moment.";
+      err.style.display = "block";
+      btn.disabled = false; btn.textContent = "Send My Request →";
+    }
+  });
+})();
+</script>
+</body>
+</html>
