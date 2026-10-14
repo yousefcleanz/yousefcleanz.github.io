@@ -160,8 +160,9 @@
       linear-gradient(180deg, rgba(29,32,37,.72) 0%, rgba(29,32,37,.80) 100%); }
   @media (prefers-reduced-motion: reduce) { .hero-bg video { display: none; } }
   .hero .wrap.split { display: grid; grid-template-columns: 1.1fr .9fr; gap: 64px; align-items: center; }
-  .hero h1 { font-size: clamp(40px, 5.6vw, 64px); margin: 18px 0 20px; }
-  .hero h1 em { font-style: normal; color: var(--accent); }
+  .hero h1.eyebrow { margin: 0; line-height: 1; }
+  .hero-title { font-family: var(--display); font-weight: 900; text-transform: uppercase; line-height: 1.02; letter-spacing: -.02em; font-size: clamp(40px, 5.6vw, 64px); margin: 18px 0 20px; }
+  .hero-title em { font-style: normal; color: var(--accent); }
   .hero p.lead { font-size: 18px; color: var(--muted); max-width: 490px; margin: 0 0 32px; }
   .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
   .rating { display: inline-flex; align-items: center; gap: 12px; margin-top: 36px; text-decoration: none; }
@@ -348,7 +349,7 @@
     .hero p.lead { display: none; }   /* save space on phones */
     .nav-quote, .hero-actions { display: none; }   /* the bottom bar already has the quote button on phones */
     .hero .rating { margin-top: 0; }
-    .hero h1 { margin-bottom: 26px; }
+    .hero-title { margin-bottom: 26px; }
     .nav-cta .phone { display: none; }
     .brand b { font-size: 16px; }
     .row-2 { grid-template-columns: 1fr; }
@@ -417,8 +418,9 @@
   </div>
   <div class="wrap split">
     <div>
-      <span class="eyebrow">Mobile Detailing · Charlotte, NC</span>
-      <h1>Showroom shine, <em>right in your driveway.</em></h1>
+      <!-- The small label is the page's main heading for Google; the big line is styled text -->
+      <h1 class="eyebrow">Mobile Car Detailing · Charlotte, NC</h1>
+      <p class="hero-title">Showroom shine, <em>right in your driveway.</em></p>
       <p class="lead">Professional mobile detailing that comes to you. No drop-off, no waiting around, just results that make your car look brand new again.</p>
       <div class="hero-actions">
         <a class="btn hero-quote" href="#quote">Get My Free Quote →</a>

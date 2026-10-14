@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page Not Found | YousefCleanz</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="/images/logo-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  /* Same palette and fonts as the main site. Paths start with "/" because this page can show at any address. */
+  :root {
+    --bg: #1d2025; --card: #2a2e35; --card-2: #31363e;
+    --text: #eceff3; --muted: #a0a8b3; --accent: #1e9bf0; --accent-2: #5cc0ff;
+    --display: "Archivo", system-ui, sans-serif;
+    --body: "IBM Plex Sans", system-ui, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--body); -webkit-font-smoothing: antialiased; display: grid; place-items: center; padding: 24px 16px; }
+  main { text-align: center; max-width: 480px; }
+  .logo { width: 84px; height: 84px; border-radius: 50%; object-fit: cover; margin: 0 auto 24px; display: block; }
+  .eyebrow { font: 500 12px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--accent-2); }
+  h1 { font: 900 clamp(34px, 8vw, 52px)/1.02 var(--display); text-transform: uppercase; letter-spacing: -.02em; margin: 12px 0 14px; }
+  p { color: var(--muted); font-size: 17px; line-height: 1.6; margin: 0 0 28px; }
+  .actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; font: 600 15px var(--body); text-decoration: none; padding: 14px 22px; border-radius: 12px; background: var(--accent); color: #fff; }
+  .btn:hover { background: #3aa9f5; }
+  .btn-soft { background: var(--card-2); color: var(--text); }
+  .btn-soft:hover { background: #3a4049; }
+</style>
+</head>
+<body>
+<main>
+  <a href="/"><img class="logo" src="/images/logo-icon.png" alt="YousefCleanz logo"></a>
+  <span class="eyebrow">Error 404</span>
+  <h1>Page not found</h1>
+  <p>This page doesn't exist or may have moved. Let's get you back to a showroom shine.</p>
+  <div class="actions">
+    <a class="btn" href="/">Back to Home</a>
+    <a class="btn btn-soft" href="/#quote">Get a Free Quote</a>
+  </div>
+</main>
+</body>
+</html>
