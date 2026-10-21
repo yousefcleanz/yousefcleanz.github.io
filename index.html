@@ -265,6 +265,8 @@
     -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='m8 12.5 2.8 2.8L16.5 9'/%3E%3C/svg%3E") center/contain no-repeat;
             mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='m8 12.5 2.8 2.8L16.5 9'/%3E%3C/svg%3E") center/contain no-repeat; }
   .service .btn { width: 100%; padding: 11px 12px; font-size: 13px; }
+  .service .more { display: block; text-align: center; margin-top: 10px; font-size: 13px; font-weight: 600; color: var(--accent-2); text-decoration: none; }
+  .service .more:hover { text-decoration: underline; }
 
   /* Service areas */
   .areas { display: grid; grid-template-columns: 300px 1fr; gap: 28px; background: var(--card); border-radius: 24px; padding: 28px; }
@@ -274,6 +276,8 @@
   .area-list { list-style: none; margin: 0 0 28px; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 12px; }
   .area-list li { display: flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 500; color: #d4d9df; }
   .area-list li svg { flex: none; color: var(--accent); }
+  .area-list .area-link { text-decoration: underline; text-decoration-color: rgba(92,192,255,.45); text-underline-offset: 3px; }
+  .area-list .area-link:hover { color: var(--accent-2); }
   .areas-side .btn { margin-top: auto; align-self: flex-start; }
   .map-box { position: relative; min-height: 500px; border-radius: 16px; overflow: hidden; background: #24282e; }
   #areaMap { position: absolute; inset: 0; pointer-events: none; }
@@ -305,7 +309,7 @@
   .cta .btn-call { background: rgba(255,255,255,.16); color: #fff; }
   .cta .btn-call:hover { background: rgba(255,255,255,.26); }
   footer { padding: 64px 0 28px; color: var(--muted); font-size: 14px; background: var(--bg-2); }
-  .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1.2fr; gap: 48px; }
+  .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 40px; }
   .foot-brand p { margin: 16px 0 22px; max-width: 300px; }
   .foot-brand .btn { padding: 11px 18px; font-size: 14px; }
   footer h4 { margin: 0 0 18px; font: 700 12px var(--body); letter-spacing: .14em; text-transform: uppercase; color: var(--text); }
@@ -601,32 +605,34 @@
       <div class="service">
         <span class="tag">Refinement</span>
         <h3>Paint Correction</h3>
-        <p>One-step or two-step machine correction to remove swirls and restore gloss.</p>
+        <p>Machine polishing that erases swirl marks and light scratches, bringing back that deep, wet-look shine.</p>
         <ul class="checks">
-          <li>Full exterior detail</li>
-          <li>Clay bar &amp; paint decontamination</li>
-          <li>One-step or two-step machine correction</li>
-          <li>Two-step adds heavy defect removal &amp; a refining polish</li>
-          <li>High-gloss paint finish</li>
-          <li>Paint sealant protection</li>
-          <li>Garage access needed for two-step</li>
+          <li>Complete exterior wash &amp; dry</li>
+          <li>Clay bar to pull out bonded contaminants</li>
+          <li>Choice of a one-step or two-step polish</li>
+          <li>Two-step tackles deeper defects, then refines to a mirror finish</li>
+          <li>Swirl-free, high-gloss paint</li>
+          <li>Sealant to lock in the results</li>
+          <li>Two-step needs a garage or covered space</li>
         </ul>
         <a class="btn btn-soft" href="#quote" data-pick="svc-correction">Get a Quote</a>
+        <a class="more" href="paint-correction-charlotte.html">Learn more →</a>
       </div>
       <div class="service">
         <span class="tag">Protection</span>
         <h3>Ceramic Coating</h3>
-        <p>Professional 3-year ceramic coating for deep gloss and water beading. Paint correction quoted separately.</p>
+        <p>A ceramic coating that bonds to your paint for years of gloss and easy cleanup. Paint correction is quoted separately.</p>
         <ul class="checks">
-          <li>Full exterior detail</li>
-          <li>Clay bar &amp; paint decontamination</li>
-          <li>3-year ceramic coating application</li>
-          <li>Deep gloss &amp; paint enhancement</li>
-          <li>Water beading &amp; self-cleaning properties</li>
-          <li>Protects against UV, oxidation &amp; contaminants</li>
-          <li>Garage access needed; correction not included</li>
+          <li>Complete exterior wash &amp; dry</li>
+          <li>Clay bar to pull out bonded contaminants</li>
+          <li>Ceramic coating rated for 3 years</li>
+          <li>Richer color and deeper gloss</li>
+          <li>Water beads up and rinses right off</li>
+          <li>Shields paint from UV, oxidation &amp; road grime</li>
+          <li>Needs a garage or covered space; correction not included</li>
         </ul>
         <a class="btn btn-soft" href="#quote" data-pick="svc-ceramic">Get a Quote</a>
+        <a class="more" href="ceramic-coating-charlotte.html">Learn more →</a>
       </div>
       <div class="service member">
         <span class="tag">Maintenance</span>
@@ -727,6 +733,16 @@
         </ul>
       </div>
       <div>
+        <h4>Popular</h4>
+        <ul class="foot-links">
+          <li><a href="ceramic-coating-charlotte.html">Ceramic Coating</a></li>
+          <li><a href="paint-correction-charlotte.html">Paint Correction</a></li>
+          <li><a href="huntersville-mobile-detailing.html">Huntersville Detailing</a></li>
+          <li><a href="mooresville-mobile-detailing.html">Mooresville Detailing</a></li>
+          <li><a href="concord-mobile-detailing.html">Concord Detailing</a></li>
+        </ul>
+      </div>
+      <div>
         <h4>Contact</h4>
         <dl class="foot-contact">
           <div data-site="phone-row" hidden><dt>Phone</dt><dd><a data-site="phone-link" href="#"></a></dd></div>
@@ -787,6 +803,12 @@ const SITE = {
     { src: "images/work-trunk.jpg", label: "Cargo" }
   ],
   workPlaceholders: 8,
+  // Cities that have their own page; their names in the area list link there
+  areaPages: {
+    "Huntersville": "huntersville-mobile-detailing.html",
+    "Mooresville": "mooresville-mobile-detailing.html",
+    "Concord": "concord-mobile-detailing.html"
+  },
   // Service areas. [name, lat, lng, label side]
   areas: [
     ["Charlotte", 35.2271, -80.8431],
@@ -895,8 +917,11 @@ const CAMERA = '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stro
   const list = document.getElementById("areaList");
   SITE.areas.forEach(([name]) => {
     const li = document.createElement("li");
-    li.innerHTML = PIN + "<span></span>";
-    li.querySelector("span").textContent = name;
+    const page = SITE.areaPages[name];
+    li.innerHTML = PIN + (page ? '<a class="area-link"></a>' : "<span></span>");
+    const label = li.lastElementChild;
+    label.textContent = name;
+    if (page) label.href = page;
     list.appendChild(li);
   });
 })();
@@ -1001,6 +1026,10 @@ const CAMERA = '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stro
     if (ok) go(2);
   });
   document.getElementById("backTo1").addEventListener("click", () => go(1));
+
+  // Links from the other pages (e.g. /?service=svc-ceramic#quote) pre-select that service
+  const preset = document.getElementById(new URLSearchParams(location.search).get("service"));
+  if (preset && preset.name === "service_type") preset.checked = true;
 
   // Package buttons pre-select that service in the form
   document.querySelectorAll("[data-pick]").forEach(a => a.addEventListener("click", () => {
