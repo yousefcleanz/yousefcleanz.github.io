@@ -257,6 +257,10 @@
   .service.featured { box-shadow: inset 0 0 0 1.5px var(--accent); background: linear-gradient(180deg, rgba(30,155,240,.10), var(--card) 45%); }
   .service .tag { align-self: flex-start; font: 600 11px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: #d4d9df; background: var(--card-2); padding: 7px 10px; border-radius: 6px; margin-bottom: 18px; }
   .service.featured .tag { background: var(--accent); color: #fff; }
+  .service .price { font: 600 14px/1.3 var(--mono); letter-spacing: .02em; color: #fff; margin: -4px 0 12px; }
+  .service .price b { color: var(--accent); font-size: 18px; }
+  .addons { text-align: center; font: 500 14px/1.5 var(--mono); color: #d4d9df; margin-top: 22px; }
+  .addons b { color: var(--accent); }
   .service h3 { font-size: 19px; margin-bottom: 10px; }
   .service p { color: var(--muted); margin: 0 0 16px; font-size: 13px; line-height: 1.5; }
   .checks { list-style: none; margin: 0 0 22px; padding: 16px 0 0; display: grid; gap: 9px; border-top: 1px solid rgba(255,255,255,.06); flex: 1; align-content: start; }
@@ -568,6 +572,7 @@
       <div class="service">
         <span class="tag">Inside</span>
         <h3>Interior Detail</h3>
+        <p class="price">Starting at <b>$80</b></p>
         <p>A thorough deep clean of your vehicle's interior. Perfect for cars needing a complete refresh inside.</p>
         <ul class="checks">
           <li>Deep interior clean</li>
@@ -581,6 +586,7 @@
       <div class="service featured">
         <span class="tag">Inside + Out</span>
         <h3>Full Detail</h3>
+        <p class="price">Starting at <b>$130</b></p>
         <p>The complete package that refreshes your ride, inside and out. Showroom quality from top to bottom.</p>
         <ul class="checks">
           <li>Everything in the Interior Detail</li>
@@ -592,6 +598,7 @@
       <div class="service">
         <span class="tag">Outside</span>
         <h3>Exterior Detail</h3>
+        <p class="price">Starting at <b>$60</b></p>
         <p>Deep exterior cleaning and paint care for a glossy, protected finish.</p>
         <ul class="checks">
           <li>Foam pre-wash</li>
@@ -605,6 +612,7 @@
       <div class="service">
         <span class="tag">Refinement</span>
         <h3>Paint Correction</h3>
+        <p class="price">Custom quote based on your vehicle</p>
         <p>Machine polishing that erases swirl marks and light scratches, bringing back that deep, wet-look shine.</p>
         <ul class="checks">
           <li>Complete exterior wash &amp; dry</li>
@@ -621,6 +629,7 @@
       <div class="service">
         <span class="tag">Protection</span>
         <h3>Ceramic Coating</h3>
+        <p class="price">Custom quote based on your vehicle</p>
         <p>A ceramic coating that bonds to your paint for years of gloss and easy cleanup. Paint correction is quoted separately.</p>
         <ul class="checks">
           <li>Complete exterior wash &amp; dry</li>
@@ -637,6 +646,7 @@
       <div class="service member">
         <span class="tag">Maintenance</span>
         <h3>Exclusive Member</h3>
+        <p class="price">Custom pricing based on your vehicle</p>
         <p>Keep that fresh-detail feeling all year with recurring maintenance details on a set schedule.</p>
         <ul class="checks">
           <li>Recurring maintenance details</li>
@@ -648,6 +658,7 @@
       </div>
     </div>
     <p class="swipe-hint">Swipe for all 6 packages →</p>
+    <p class="addons">Add-ons: Headlight Restoration from <b>$80</b> · Seat Shampoo from <b>$50</b></p>
   </div>
 </section>
 
